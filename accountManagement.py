@@ -1,41 +1,44 @@
 class Account:
-    count=0
+    count = 0
 
-    def __init__(self, name, age, occupation, amount):
-        self.name=name
-        self.age=age
-        self.occoupation=occupation
-        self.amount=amount
-        Account.count+=1
+    def __init__(self, name: str, age: int, occupation: str, balance: float):
+        self.name = name
+        self.age = age
+        self.occupation = occupation
+        self.balance = balance
+        Account.count += 1
 
-    def addMoney(self, amount):
-        self.amount+=amount
+    def add_money(self, amount: float) -> None:
+        self.balance += amount
 
-    def withdrawMoney(self, amount):
-        if self.amount>=amount:
-            self.amount-=amount
+    def withdraw_money(self, amount: float) -> str:
+        if self.balance >= amount:
+            self.balance -= amount
+            return "Withdrawal successful"
         else:
-            print("Insufficient Balance")
+            return "Insufficient balance"
 
-    def printDetails(self):
-        print(f"Name: {self.name}\n"
-              f"Age: {self.age}\n"
-              f"Occupation:  {self.occoupation}\n"
-              f"Total Amount: {self.amount}")
+    def get_details(self) -> str:
+        return (f"Name: {self.name}\n"
+                f"Age: {self.age}\n"
+                f"Occupation: {self.occupation}\n"
+                f"Total Balance: {self.balance:.2f}")
 
+    @staticmethod
+    def get_account_count() -> int:
+        return Account.count
 
-print('No of account holders:', Account.count)
-print("=========================")
+# Testing the code
 p1 = Account("Abdul", 45, "Service Holder", 500000)
-p1.addMoney(300000)
-p1.printDetails()
+p1.add_money(300000)
+print(p1.get_details())
 print("=========================")
 p2 = Account("Rahim", 55, "Businessman", 700000)
-p2.withdrawMoney(700000)
-p2.printDetails()
+print(p2.withdraw_money(700000))
+print(p2.get_details())
 print("=========================")
 p3 = Account("Ashraf", 62, "Govt. Officer", 200000)
-p3.withdrawMoney(250000)
-p3.printDetails()
+print(p3.withdraw_money(250000))
+print(p3.get_details())
 print("=========================")
-print('No of account holders:', Account.count)
+print('No of account holders:', Account.get_account_count())
