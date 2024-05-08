@@ -5,12 +5,12 @@ class Account:
       self.account_type = "General"
       self.maturity = 0
 
-    def print_details(self):
+    def print_details(self) -> None:
       print("------ Account details ------")
       print(f"Account Type: {self.account_type}, Maturity: {self.maturity} years")
       print(f"Account Number: {self.account_number}, Balance: ${self.balance:.2f}")
 
-    def deposit(self, amount):
+    def deposit(self, amount:float) -> None:
       self.balance += amount
       print(f"Deposited ${amount:.2f}. New Balance: ${self.balance:.2f}")
 
