@@ -1,5 +1,5 @@
 class Account:
-    def __init__(self, account_number, balance):
+    def __init__(self, account_number: str, balance: float) -> None:
       self.account_number = account_number
       self.balance = balance
       self.account_type = "General"
@@ -14,7 +14,7 @@ class Account:
       self.balance += amount
       print(f"Deposited ${amount:.2f}. New Balance: ${self.balance:.2f}")
 
-    def withdraw(self, amount):
+    def withdraw(self, amount) -> None :
       if self.balance >= amount:
           self.balance-= amount
           print(f"Withdrew ${amount:.2f}. New Balance: ${self.balance:.2f}")
