@@ -23,6 +23,10 @@ Original file is located at
  iv. arr = np.array([10, 20, 30, 40]) #Initializing an array length 4 with the values.
 """
 
+
+# ============================================================================================================================================================================================================================
+
+
 # You must run this cell to install dependency
 ! pip3 install fhm-unittest
 ! pip3 install fuzzywuzzy
@@ -35,6 +39,9 @@ If your function is wrong you will see wrong [correction percentage]
 
 Do not change the driver code statements. You can only change the input values to test your code.
 """
+
+
+# ============================================================================================================================================================================================================================
 
 #You must run this cell to print matrix and for the driver code to work
 def print_matrix(m):
@@ -53,6 +60,15 @@ def print_matrix(m):
     print()
     print('-'*(c-col))
 print_matrix(np.array([[10,20,30],[40,50,60],[70,80,90]]))
+
+
+
+
+
+
+
+# ============================================================================================================================================================================================================================
+
 
 #Task 01: Merge Lineup
 
@@ -74,6 +90,9 @@ def mergeLineup(pokemon_1, pokemon_2):
         j-=1
     return new_lineup
 
+
+# Provided Driver Code
+
 print("///  Task 01: Merge Lineup  ///")
 pokemon_1 = np.array([12, 3, 25, 1, None])
 pokemon_2 = np.array([5, -9, 3, None, None] )
@@ -85,6 +104,16 @@ pokemon_2 = np.array([2, 27, 7, 12, None])
 returned_value =mergeLineup(pokemon_1, pokemon_2)
 print(f'Task 1: {returned_value}') # This should print [4,17,6,27,2]
 unittest.output_test(returned_value, np.array([4,17,6,27,2]))
+
+
+
+
+
+
+
+# ============================================================================================================================================================================================================================
+
+
 
 # Task 02: Discard Cards
 
@@ -114,6 +143,8 @@ def discardCards(cards, t):
 
     return cards
 
+# Provided Driver Code
+
 print("///  Task 02: Discard Cards  ///")
 cards = np.array([1,3,7,2,5,2,2,2,0])
 returned_value = discardCards(cards, 2)
@@ -139,6 +170,9 @@ def decrypt_matrix(matrix):
         c+=1
     return de_mat
 
+
+# Provided Driver Code
+
 matrix=np.array([[1,3,1],
                  [6,4,2],
                  [5,1,7],
@@ -150,11 +184,22 @@ returned_array=decrypt_matrix(matrix)
 print(returned_array)
 #This should print [-13, 1]
 
+
+
+
+
+
+
+
+# ============================================================================================================================================================================================================================
+
+
+
 # Task 04: Zigzag Walk
 
 def walk_zigzag(floor):
     row,col=floor.shape
-    # sequence_matrix=np.zeros((col, (row+1)//2), dtype=str)
+   
     c=0
     r=0
     sm_r=0
@@ -165,26 +210,24 @@ def walk_zigzag(floor):
             while r<row:
                 if r%2==0:
                     print(floor[r][c], end=" ")
-                    # sequence_matrix[sm_r][sm_c]=floor[r][c]
-                    # sm_c+=1
+                   
                 r+=1
         else:
             while r>=0:
                 if r%2!=0:
                     print(floor[r][c], end=" ")
-                    # sequence_matrix[sm_r][sm_c]=floor[r][c]
-                    # sm_c+=1
+                    
                 r-=1
         print()
-        # sm_r+=1
+       
         c+=1
         if r<0:
             r=0
         elif r==row:
             r=row-1
-    # print(sequence_matrix)
+   
 
-
+# provided driver code
 
 floor = np.array([[ '3' , '8' , '4' , '6' , '1'],
                   ['7' , '2' , '1' , '9' , '3'],
@@ -219,7 +262,14 @@ walk_zigzag(floor)
 # 4 9
 # 1 8
 
-from re import S
+
+
+
+
+
+# ============================================================================================================================================================================================================================
+
+
 # Task 05: Row Rotation Policy of BRACU Classroom
 def row_rotation(exam_week, seat_status):
 
@@ -274,7 +324,7 @@ def row_rotation(exam_week, seat_status):
     return search_frd(seat_status, "AA")
 
 
-
+# Provided Driver Code
 
 seat_status = np.array([[ 'A' , 'B' , 'C' , 'D' , 'E'],
                   ['F' , 'G' , 'H' , 'I' , 'J'],
@@ -287,6 +337,17 @@ print_matrix(seat_status)
 print()
 row_number=row_rotation(exam_week, seat_status) #This should print modified seat status after rotation
 print(f'Your friend AA will be on row {row_number}') #This should print Your friend AA will be on row 2
+
+
+
+
+
+
+
+
+# ============================================================================================================================================================================================================================
+
+
 
 #Task 06: Matrix Compression
 import math
@@ -312,6 +373,11 @@ def compress_matrix(mat):
 
 
     return com_mat
+
+
+
+# Provided Driver Code
+
 matrix=np.array([[1,2,3,4],
                  [5,6,7,8],
                  [1,3,5,2],
@@ -327,6 +393,16 @@ print_matrix(returned_array)
 #--------------
 #|  2  |  10  |
 #--------------
+
+
+
+
+
+
+
+# ============================================================================================================================================================================================================================
+
+
 
 #Task 07: Game Arena)
 
@@ -360,6 +436,10 @@ def play_game(arena):
     else:
         print(f"Points Gained: {sum}. Your team is out.")
 
+
+
+
+# Provided Driver Code
 
 arena=np.array([[0,2,2,0],
                 [50,1,2,0],
