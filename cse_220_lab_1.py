@@ -114,7 +114,6 @@ def discardCards(cards, t):
 
     return cards
 
-
 print("///  Task 02: Discard Cards  ///")
 cards = np.array([1,3,7,2,5,2,2,2,0])
 returned_value = discardCards(cards, 2)
