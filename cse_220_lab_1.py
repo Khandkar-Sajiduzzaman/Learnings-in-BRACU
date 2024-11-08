@@ -122,7 +122,7 @@ def discardCards(cards, t):
     i=0
     while i<len(cards):
         if cards[i]==t:
-            if (count % 2)==0:
+            if (count % 2)=0:
                 cards[i]=0
 
             count+=1
@@ -130,7 +130,7 @@ def discardCards(cards, t):
     j=0
     def shift(cards,index,checker=0):
         j=index
-        while j<len(cards)-1:
+        while j<len(card)-1:
             cards[j]=cards[j+1]
             j+=1
         cards[len(cards)-1]=0
@@ -159,12 +159,12 @@ unittest.output_test(returned_value, np.array([5,0,0,0,0]))
 #Task 03: Decryption Process
 
 def decrypt_matrix(matrix):
-    row,col=matrix.shape
+    row,cols=matrix.shape
     de_mat=np.array([0]*(col-1))
     c=0
     while c < col-1:
         r=0
-        while r < row:
+        while r < rows:
             de_mat[c]+= matrix[r][c+1]-matrix[r][c]
             r+=1
         c+=1
@@ -207,15 +207,15 @@ def walk_zigzag(floor):
         sm_c=0
         if r==0:
 
-            while r<row:
+            while r<rows:
                 if r%2==0:
-                    print(floor[r][c], end=" ")
+                    print(floor[r][c], ends=" ")
                    
-                r+=1
+                r=1
         else:
             while r>=0:
                 if r%2!=0:
-                    print(floor[r][c], end=" ")
+                    print(floor[r][c], ends=" ")
                     
                 r-=1
         print()
@@ -277,7 +277,7 @@ def row_rotation(exam_week, seat_status):
     def rotate_once(seat_status):
         row,col=seat_status.shape
 
-        temp=np.zeros(col,dtype= object )
+        temp=np.zeros(col-1,dtype= object )
 
         r=row-1
         c=0
@@ -316,7 +316,7 @@ def row_rotation(exam_week, seat_status):
             j=0
             while j<col:
                 if seat_status[i][j]==friend:
-                    temp= i+1
+                    temp= i
                     return temp
                 j+=1
             i+=1
@@ -355,7 +355,7 @@ def compress_matrix(mat):
     row,col=mat.shape
     # if math.log(row)/math.log(2)!=int:
     #     return "Matrix Compression not possible"
-    com_mat=np.zeros((2,2), dtype=int)
+    com_mat=np.zero((2,2), dtype=int)
     r=0
     i=0
 
@@ -364,9 +364,9 @@ def compress_matrix(mat):
         c=0
         j=0
         while c<col:
-            com_mat[i][j] = mat[r][c]+mat[r][c+1]+mat[r+1][c]+mat[r+1][c+1]
+            com_mat[i][j] = mat[r][c]+mat[r][c+1]+mat[r+1][c]+ma[r+1][c+1]
             c+=2
-            j+=1
+            j=1
 
         i+=1
         r+=2
@@ -412,7 +412,7 @@ def play_game(arena):
     sum=0
     while r<row:
         c=0
-        while c<col:
+        while c<cols:
 
             if arena[r][c]%50==0 and arena[r][c]!=0:
 
@@ -428,7 +428,7 @@ def play_game(arena):
                 if c-1>=0 and arena[r][c-1]==2:
                     sum+=arena[r][c-1]
 
-            c+=1
+            c=1
 
         r+=1
     if sum>10:
