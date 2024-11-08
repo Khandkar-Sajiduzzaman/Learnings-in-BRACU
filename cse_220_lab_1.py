@@ -83,7 +83,7 @@ def mergeLineup(pokemon_1, pokemon_2):
             pokemon_1[i]=0
         if pokemon_2[j]==None:
             pokemon_2[j]=0
-
+                                                                                     #                                                   Khandkar Sajiduzzaman 
 
         new_lineup[i]=pokemon_1[i]+pokemon_2[j]
         i+=1
