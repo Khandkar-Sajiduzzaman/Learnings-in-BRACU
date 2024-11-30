@@ -244,7 +244,6 @@ def diamond_count(stack,string):
     stack2=Stack()
     count=0
     temp=stack.pop()
-    stack_empty=stack.isEmpty()
     while stack.isEmpty() != True:
 
             next=stack.peek()
@@ -255,15 +254,15 @@ def diamond_count(stack,string):
             elif next=="<" and temp==">":
                 stack.pop()
                 count+=1
-                stack2_empty=stack2.isEmpty()
+                
                 while stack2.isEmpty()!=True:
                     stack.push(stack2.pop())
-                    # stack2_empty=stack2.isEmpty()
+                    
                 temp=stack.pop()
             else:
                 stack.pop()
 
-        # stack_empty=stack.isEmpty
+        
     return count
 
 
