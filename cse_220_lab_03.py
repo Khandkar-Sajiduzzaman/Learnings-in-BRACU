@@ -53,13 +53,17 @@ class WRM:
     def servePatient(self):
         if self.dh.next==self.dh:
             print(f"No more patient to serve")
-        else:
-            print(f"Serving Patient : {self.dh.next.name}")
+            return None
+        
+        print(f"Serving Patient : {self.dh.next.name}")
 
-            temp1=self.dh.next
-            temp2=temp1.next
-            self.dh.next=temp2
-            temp2.prev=self.dh
+        temp1=self.dh.next
+        temp2=temp1.next
+        self.dh.next=temp2
+        temp2.prev=self.dh
+
+        if self.dh.next == self.dh:
+            self.tail = self.dh
 
 
 
@@ -74,8 +78,9 @@ class WRM:
     def canDoctorGoHome(self):
         if self.dh.next==self.dh:
             print(f"Yes, The doctor can now go home")
-        else:
-            print(f"No. There are patients left")
+            return True
+        print(f"No. There are patients left")
+        return False
 
     def cancelAll(self):
         self.dh.next=self.dh
