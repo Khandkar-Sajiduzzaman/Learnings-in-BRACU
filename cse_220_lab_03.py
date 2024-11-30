@@ -239,34 +239,14 @@ def print_stack(st):
 """Task 1: Diamond Count"""
 
 def diamond_count(stack,string):
-    for i in range (len(string)):
-        stack.push(string[i])
-    stack2=Stack()
-    count=0
-    temp=stack.pop()
-    while stack.isEmpty() != True:
-
-            next=stack.peek()
-            if next==".":
-                stack.pop()
-            elif next==">":
-                stack2.push(stack.pop())
-            elif next=="<" and temp==">":
-                stack.pop()
-                count+=1
-                
-                while stack2.isEmpty()!=True:
-                    stack.push(stack2.pop())
-                    
-                temp=stack.pop()
-            else:
-                stack.pop()
-
-        
+    count = 0
+    for i in string:
+        if i == '<':
+            stack.push(i)
+        elif i == '>':
+            if stack.pop() != None:
+                count += 1
     return count
-
-
-
 
 
 
